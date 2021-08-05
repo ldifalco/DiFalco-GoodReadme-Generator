@@ -46,7 +46,7 @@ ${input.test} \n \n
 This application is covered under the ${input.license} license. \n \n
 ## Questions \n
 Contact Me Here: ${input.email} \n
-Github: https://github.com/${input.username} \n` 
+Github: https://github.com/${input.github} \n` 
 }
 
 module.exports = generateMarkdown;
