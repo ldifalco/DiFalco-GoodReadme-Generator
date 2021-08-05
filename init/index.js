@@ -5,9 +5,8 @@ const generateMarkdown = require('./generateMarkdown')
 
 
 // array of questions for inqurier package
-const questions = 
 inquirer
-.prompt([
+    .prompt([
     {
         type: 'input',
         message: 'name of README',
@@ -36,31 +35,31 @@ inquirer
 {
     type: 'input',
     message: 'Test Instructions',
-    name: 'instruct'
+    name: 'test'
 },
 {
     type: 'list',
     message: 'Select license',
-    choices: ['Apache', 'MIT', 'GPL'],
+    choices: ['Boost', 'MIT', 'Mozilla'],
     name: 'license'
 
+},
+{
+    type: 'input',
+    message: 'Github Username',
+    name: 'github'
+},
+{
+    type: 'input',
+    message: 'Your Email',
+    name: 'email'
 }
 
 ])
-//console log answers to make sure they register
-.then(function (answer){
-console.log(answer.name);    
-console.log(answer.description);
-console.log(answer.install);
-console.log(answer.useinfo);
-console.log(answer.contribute);
-console.log(answer.instruct);
-console.log(answer.license)
 
-})
 //function to write file
-.then((answer) => {
-    fs.writeFile('README.md', generateMarkdown(answer), (err) =>
+.then((input) => {
+    fs.writeFile('README.md', generateMarkdown(input), (err) =>
     err ? console.error(err) : console.log('README created!'))
 
 })  
