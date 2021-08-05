@@ -42,7 +42,7 @@ console.log(answer.useinfo);
 console.log(answer.contribute);
 console.log(answer.instruct);
 
-});
+})
 
 .then((answer) => {
     fs.writeFile('README.md', generateMarkdown(answer), (err) =>
